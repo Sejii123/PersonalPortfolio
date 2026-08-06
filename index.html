@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #151515;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff3333;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff3333;
+        }
+
+        section {
+            padding: 80px 8%;
+            min-height: 70vh;
+        }
+
+        /* Home */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #ff3333;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #ff3333;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #cc0000;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        /* About */
+        .about {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #1c1c1c;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: #1c1c1c;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .project h3 {
+            color: #ff3333;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #bbb;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            color: #ccc;
+        }
+
+        /* Footer */
+        footer {
+            background: #151515;
+            text-align: center;
+            padding: 20px;
+            color: #888;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">MyPortfolio</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- Home -->
+    <section class="hero" id="home">
+
+        <div>
+            <h1>
+                Hello, I'm <span>Your Name</span>
+            </h1>
+
+            <p>
+                Web Developer | Programmer | Student
+            </p>
+
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about">
+
+            <p>
+                Hello! I'm Your Name, a student and aspiring web developer.
+                I enjoy creating websites, developing applications, and
+                learning new technologies. I am passionate about improving
+                my programming skills and building useful digital solutions. Sheeesss
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2 class="section-title">
+            My Skills
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">PHP</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Git</div>
+            <div class="skill">GitHub</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2 class="section-title">
+            My Projects
+        </h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>
+                    Gym Operation System
+                </h3>
+
+                <p>
+                    A web-based system for managing gym memberships,
+                    bookings, attendance, equipment, inventory, and reports.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Portfolio Website
+                </h3>
+
+                <p>
+                    A personal portfolio website showcasing my skills,
+                    projects, and experience.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Inventory System
+                </h3>
+
+                <p>
+                    A simple inventory management system for monitoring
+                    products, equipment, and stock information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <div class="contact">
+
+            <p>
+                Email: your@email.com
+            </p>
+
+            <p>
+                GitHub: github.com/yourusername
+            </p>
+
+            <p>
+                Location: Philippines
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Your Name. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
