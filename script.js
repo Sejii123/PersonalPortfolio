@@ -40,3 +40,14 @@ function typeEffect() {
 }
 
 typeEffect();
+
+
+// LIGHT AND DARK MODE TOGGLE
+
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", function() {
+
+    document.body.classList.toggle("light-mode");
+
+});
