@@ -6,6 +6,7 @@
     scroll-behavior: smooth;
 }
 
+
 /* =========================
    THEME COLORS
    ========================= */
@@ -22,6 +23,9 @@
     --purple-hover: rgb(144, 19, 148);
 }
 
+
+/* LIGHT MODE */
+
 body.light-mode {
     --bg-color: #ffffff;
     --text-color: #222222;
@@ -34,6 +38,7 @@ body.light-mode {
     --purple-hover: rgb(144, 19, 148);
 }
 
+
 /* =========================
    BODY
    ========================= */
@@ -42,7 +47,9 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
 }
+
 
 /* =========================
    HEADER
@@ -50,35 +57,161 @@ body {
 
 header {
     background: var(--header-color);
-    padding: 20px 8%;
+
+    padding: 18px 8%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     position: sticky;
     top: 0;
+
     z-index: 1000;
+
+    border-bottom: 1px solid var(--border-color);
+
+    transition: background 0.3s, border-color 0.3s;
 }
+
+
+/* =========================
+   LOGO
+   ========================= */
 
 .logo {
     font-size: 24px;
     font-weight: bold;
+
     color: var(--text-color);
+
+    letter-spacing: 0.5px;
 }
 
 .logo span {
     color: var(--purple);
 }
 
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 nav a {
+    position: relative;
+
     color: var(--text-color);
+
     text-decoration: none;
-    margin-left: 25px;
+
+    font-size: 15px;
+    font-weight: 600;
+
     transition: 0.3s;
 }
 
 nav a:hover {
     color: var(--purple);
 }
+
+
+/* NAVIGATION UNDERLINE */
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--purple);
+
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   THEME TOGGLE BUTTON
+   ========================= */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+
+    background: var(--card-color);
+    color: var(--text-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.theme-toggle:hover {
+    background: var(--purple);
+    border-color: var(--purple);
+    color: white;
+
+    transform: rotate(10deg);
+}
+
+
+/* MATERIAL SYMBOL ICON */
+
+.theme-toggle .material-symbols-outlined {
+    font-size: 22px;
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* DARK MODE = MOON */
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: flex;
+}
+
+
+/* LIGHT MODE = SUN */
+
+body.light-mode .theme-toggle .icon-sun {
+    display: flex;
+}
+
+body.light-mode .theme-toggle .icon-moon {
+    display: none;
+}
+
 
 /* =========================
    SECTIONS
@@ -89,16 +222,21 @@ section {
     min-height: 70vh;
 }
 
+
 /* =========================
    HOME
    ========================= */
 
 .hero {
     min-height: 90vh;
+
     display: flex;
+
     justify-content: flex-start;
     align-items: center;
+
     text-align: left;
+
     padding-left: 8%;
 }
 
@@ -113,11 +251,16 @@ section {
 
 .hero p {
     font-size: 20px;
+
     color: var(--secondary-text);
+
     margin-bottom: 25px;
 }
 
-/* Typing Text */
+
+/* =========================
+   TYPING TEXT
+   ========================= */
 
 #typing-text {
     font-weight: bold;
@@ -125,11 +268,14 @@ section {
 
 .cursor {
     display: inline-block;
+
     margin-left: 3px;
+
     animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
+
     0%, 50% {
         opacity: 1;
     }
@@ -139,24 +285,34 @@ section {
     }
 }
 
+
 /* =========================
    BUTTON
    ========================= */
 
 .btn {
     display: inline-block;
+
     padding: 12px 25px;
+
     background: var(--purple);
     color: white;
+
     text-decoration: none;
+
     border-radius: 6px;
+
     transition: 0.3s;
+
     margin: 20px;
 }
 
 .btn:hover {
     background: var(--purple-hover);
+
+    transform: translateY(-2px);
 }
+
 
 /* =========================
    SECTION TITLE
@@ -164,9 +320,12 @@ section {
 
 .section-title {
     text-align: center;
+
     font-size: 35px;
+
     margin-bottom: 40px;
 }
+
 
 /* =========================
    ABOUT
@@ -174,10 +333,14 @@ section {
 
 .about {
     max-width: 800px;
+
     margin: auto;
+
     text-align: center;
+
     color: var(--secondary-text);
 }
+
 
 /* =========================
    SKILLS
@@ -185,17 +348,32 @@ section {
 
 .skills {
     display: flex;
+
     justify-content: center;
+
     flex-wrap: wrap;
+
     gap: 15px;
 }
 
 .skill {
     background: var(--card-color);
+
     padding: 15px 25px;
+
     border-radius: 8px;
+
     border: 1px solid var(--border-color);
+
+    transition: 0.3s;
 }
+
+.skill:hover {
+    border-color: var(--purple);
+
+    transform: translateY(-3px);
+}
+
 
 /* =========================
    PROJECTS
@@ -203,19 +381,34 @@ section {
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
     gap: 25px;
 }
 
 .project {
     background: var(--card-color);
+
     padding: 25px;
+
     border-radius: 10px;
+
     border: 1px solid var(--border-color);
+
+    transition: 0.3s;
+}
+
+.project:hover {
+    border-color: var(--purple);
+
+    transform: translateY(-5px);
 }
 
 .project h3 {
     color: var(--purple);
+
     margin-bottom: 10px;
 }
 
@@ -223,13 +416,19 @@ section {
     color: var(--secondary-text);
 }
 
+
+/* PROJECT LINKS */
+
 .project-link,
 .project-link:hover,
 .project-link:visited,
 .project-link:active {
+
     text-decoration: none;
+
     color: inherit;
 }
+
 
 /* =========================
    CONTACT
@@ -241,8 +440,10 @@ section {
 
 .contact p {
     margin: 10px 0;
+
     color: var(--secondary-text);
 }
+
 
 /* =========================
    FOOTER
@@ -250,10 +451,16 @@ section {
 
 footer {
     background: var(--header-color);
+
     text-align: center;
+
     padding: 20px;
+
     color: var(--secondary-text);
+
+    border-top: 1px solid var(--border-color);
 }
+
 
 /* =========================
    MOBILE
@@ -263,56 +470,32 @@ footer {
 
     header {
         flex-direction: column;
+
         gap: 15px;
     }
 
+    nav {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
     nav a {
-        margin: 0 8px;
+        font-size: 14px;
     }
 
     .hero h1 {
         font-size: 40px;
     }
-}
 
-/* Theme Toggle */
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+    }
 
-.theme-toggle {
-    width: 42px;
-    height: 42px;
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    background: var(--card-color);
-    color: var(--text-color);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.theme-toggle:hover {
-    background: var(--purple);
-    border-color: var(--purple);
-    color: white;
-}
-
-.theme-toggle .icon-sun {
-    display: none;
-}
-
-.theme-toggle .icon-moon {
-    display: block;
-}
-
-/* Light mode */
-
-body.light-mode .theme-toggle .icon-sun {
-    display: block;
-}
-
-body.light-mode .theme-toggle .icon-moon {
-    display: none;
+    .theme-toggle .material-symbols-outlined {
+        font-size: 20px;
+    }
 }
