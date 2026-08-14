@@ -257,6 +257,34 @@ section {
     margin-bottom: 25px;
 }
 
+.resume-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.resume-buttons .btn {
+    margin: 0;
+}
+
+/* View Resume */
+.resume-buttons .btn:first-child {
+    background: var(--purple);
+    color: white;
+}
+
+/* Download Resume */
+.resume-buttons .btn-secondary {
+    background: transparent;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+}
+
+.resume-buttons .btn-secondary:hover {
+    background: var(--purple);
+    color: white;
+}
+
 
 /* =========================
    TYPING TEXT
@@ -346,17 +374,29 @@ section {
    SKILLS
    ========================= */
 
+.skills-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 5px 0;
+}
+
 .skills {
     display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 
     gap: 15px;
+
+    width: max-content;
+
+    animation: marquee 20s linear infinite;
 }
 
 .skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background: var(--card-color);
 
     padding: 15px 25px;
@@ -365,13 +405,35 @@ section {
 
     border: 1px solid var(--border-color);
 
+    min-width: 120px;
+
+    color: var(--text-color);
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    flex-shrink: 0;
+
     transition: 0.3s;
 }
 
 .skill:hover {
     border-color: var(--purple);
-
     transform: translateY(-3px);
+}
+
+.skills:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 7.5px));
+    }
 }
 
 
